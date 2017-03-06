@@ -1,0 +1,50 @@
+@()
+
+@main("Data") {
+    <script type='text/javascript' src='@routes.Assets.at("javascripts/charts.js")'></script>
+    <script type='text/javascript' src='@routes.Assets.at("javascripts/transformationHandler.js")'></script>
+    <script type='text/javascript' src='@routes.Assets.at("javascripts/sortableTransformation.js")'></script>
+
+
+    <table width="100%">
+        <tr>
+            <td>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Add Transformation <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a onclick="addTransformation('addNoise', 50, 0)">Add Noise</a></li>
+                        <li><a onclick="addTransformation('denoise', 50, 0)">Denoise</a></li>
+                        <li><a onclick="addTransformation('removeLevel', 0, 0)">Remove Level</a></li>
+                        <li><a onclick="addTransformation('swap', 0, 0)">Swap</a></li>
+                        <li><a onclick="addTransformation('cutJumps', 50, 0)">Cut jumps</a></li>
+                    </ul>
+                </div>
+
+                <ul id="sortable0">
+                </ul>
+            </td>
+            <td>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Add Transformation <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a onclick="addTransformation('addNoise', 50, 1)">Add Noise</a></li>
+                        <li><a onclick="addTransformation('denoise', 50, 1)">Denoise</a></li>
+                        <li><a onclick="addTransformation('removeLevel', 0, 1)">Remove Level</a></li>
+                        <li><a onclick="addTransformation('swap', 0, 1)">Swap</a></li>
+                        <li><a onclick="addTransformation('cutJumps', 50, 1)">Cut jumps</a></li>
+                    </ul>
+                </div>
+
+                <ul id="sortable1">
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+
+    <div id="chart_div" width="1800" height="900"></div>
+}
